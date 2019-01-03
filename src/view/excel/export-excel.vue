@@ -3,9 +3,9 @@
 </style>
 <template>
   <div>
-    <Card title="导出EXCEL">
+    <Card title="Export EXCEL">
       <Row>
-        <Button icon="md-download" :loading="exportLoading" @click="exportExcel">导出文件</Button>
+        <Button icon="md-download" :loading="exportLoading" @click="exportExcel">Export file</Button>
       </Row>
     </Card>
     <Row class="margin-top-10">
@@ -22,15 +22,15 @@ export default {
       exportLoading: false,
       tableTitle: [
         {
-          title: '一级分类',
+          title: 'Primary classification',
           key: 'category1'
         },
         {
-          title: '二级分类',
+          title: 'Secondary classification',
           key: 'category2'
         },
         {
-          title: '三级分类',
+          title: 'Three-level classification',
           key: 'category3'
         }
       ],
@@ -58,16 +58,16 @@ export default {
       if (this.tableData.length) {
         this.exportLoading = true
         const params = {
-          title: ['一级分类', '二级分类', '三级分类'],
+          title: ['Class 1', 'Class 2', 'Class 3'],
           key: ['category1', 'category2', 'category3'],
           data: this.tableData,
           autoWidth: true,
-          filename: '分类列表'
+          filename: 'Category List'
         }
         excel.export_array_to_excel(params)
         this.exportLoading = false
       } else {
-        this.$Message.info('表格数据不能为空！')
+        this.$Message.info('The form data cannot be empty!')
       }
     }
   },

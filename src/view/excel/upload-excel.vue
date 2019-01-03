@@ -3,10 +3,10 @@
 </style>
 <template>
   <div>
-    <Card title="导入EXCEL">
+    <Card title="Import EXCEL">
       <Row>
         <Upload action="" :before-upload="handleBeforeUpload" accept=".xls, .xlsx">
-          <Button icon="ios-cloud-upload-outline" :loading="uploadLoading" @click="handleUploadFile">上传文件</Button>
+          <Button icon="ios-cloud-upload-outline" :loading="uploadLoading" @click="handleUploadFile">upload files</Button>
         </Upload>
       </Row>
       <Row>
@@ -21,7 +21,7 @@
           <Progress v-if="showProgress" :percent="progressPercent" :stroke-width="2">
             <div v-if="progressPercent == 100">
               <Icon type="ios-checkmark-circle"></Icon>
-              <span>成功</span>
+              <span>success</span>
             </div>
           </Progress>
         </transition>
@@ -61,7 +61,7 @@ export default {
     },
     handleRemove () {
       this.initUpload()
-      this.$Message.info('上传的文件已删除！')
+      this.$Message.info('The uploaded file has been deleted!')
     },
     handleBeforeUpload (file) {
       const fileExt = file.name.split('.').pop().toLocaleLowerCase()
@@ -70,13 +70,13 @@ export default {
         this.file = file
       } else {
         this.$Notice.warning({
-          title: '文件类型错误',
-          desc: '文件：' + file.name + '不是EXCEL文件，请选择后缀为.xlsx或者.xls的EXCEL文件。'
+          title: 'File type error',
+          desc: 'file:' + file.name + 'Not an EXCEL file, please select an EXCEL file with a .xlsx or .xls suffix.'
         })
       }
       return false
     },
-    // 读取文件
+    // Read file
     readFile (file) {
       const reader = new FileReader()
       reader.readAsArrayBuffer(file)
@@ -89,10 +89,10 @@ export default {
         this.progressPercent = Math.round(e.loaded / e.total * 100)
       }
       reader.onerror = e => {
-        this.$Message.error('文件读取出错')
+        this.$Message.error('File read error')
       }
       reader.onload = e => {
-        this.$Message.info('文件读取成功')
+        this.$Message.info('File read successfully')
         const data = e.target.result
         const { header, results } = excel.read(data, 'array')
         const tableTitle = header.map(item => { return { title: item, key: item } })

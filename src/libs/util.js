@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie'
-// cookie保存的天数
+// Number of days the cookie is saved
 import config from '@/config'
 import { forEach, hasOneOf, objEqual } from '@/libs/tools'
 const { title, cookieExpires, useI18n } = config
@@ -27,7 +27,7 @@ const showThisMenuEle = (item, access) => {
   } else return true
 }
 /**
- * @param {Array} list 通过路由列表得到菜单列表
+ * @param {Array} list Get a menu list from the routing list
  * @returns {Array}
  */
 export const getMenuByRouter = (list, access) => {
@@ -50,7 +50,7 @@ export const getMenuByRouter = (list, access) => {
 }
 
 /**
- * @param {Array} routeMetched 当前路由metched
+ * @param {Array} routeMetched Current route metched
  * @returns {Array}
  */
 export const getBreadCrumbList = (route, homeRoute) => {
@@ -105,23 +105,23 @@ export const showTitle = (item, vm) => {
 }
 
 /**
- * @description 本地存储和获取标签导航列表
- */
+  * @description Local storage and get label navigation list
+  */
 export const setTagNavListInLocalstorage = list => {
   localStorage.tagNaveList = JSON.stringify(list)
 }
 /**
- * @returns {Array} 其中的每个元素只包含路由原信息中的name, path, meta三项
- */
+  * @returns {Array} Each of these elements contains only the name, path, meta in the routing information.
+  */
 export const getTagNavListFromLocalstorage = () => {
   const list = localStorage.tagNaveList
   return list ? JSON.parse(list) : []
 }
 
 /**
- * @param {Array} routers 路由列表数组
- * @description 用于找到路由列表中name为home的对象
- */
+  * @param {Array} routers routing list array
+  * @description is used to find the object whose name is home in the route list.
+  */
 export const getHomeRoute = (routers, homeName = 'home') => {
   let i = -1
   let len = routers.length
@@ -139,10 +139,10 @@ export const getHomeRoute = (routers, homeName = 'home') => {
 }
 
 /**
- * @param {*} list 现有标签导航列表
- * @param {*} newRoute 新添加的路由原信息对象
- * @description 如果该newRoute已经存在则不再添加
- */
+  * @param {*} list existing tag navigation list
+  * @param {*} newRoute newly added route original information object
+  * @description If the newRoute already exists, it will not be added.
+  */
 export const getNewTagList = (list, newRoute) => {
   const { name, path, meta } = newRoute
   let newList = [...list]
@@ -152,21 +152,21 @@ export const getNewTagList = (list, newRoute) => {
 }
 
 /**
- * @param {*} access 用户权限数组，如 ['super_admin', 'admin']
- * @param {*} route 路由列表
- */
+  * @param {*} access user permission array, such as ['super_admin', 'admin']
+  * @param {*} route routing list
+  */
 const hasAccess = (access, route) => {
   if (route.meta && route.meta.access) return hasOneOf(access, route.meta.access)
   else return true
 }
 
 /**
- * 权鉴
- * @param {*} name 即将跳转的路由name
- * @param {*} access 用户权限数组
- * @param {*} routes 路由列表
- * @description 用户是否可跳转到该页
- */
+  * 权鉴
+  * @param {*} name The name of the route to be jumped
+  * @param {*} access user permission array
+  * @param {*} routes routing list
+  * @description Can the user jump to this page?
+  */
 export const canTurnTo = (name, access, routes) => {
   const routePermissionJudge = (list) => {
     return list.some(item => {
@@ -183,7 +183,7 @@ export const canTurnTo = (name, access, routes) => {
 
 /**
  * @param {String} url
- * @description 从URL中解析参数
+ * @description Parse parameters from the URL
  */
 export const getParams = url => {
   const keyValueArr = url.split('?')[1].split('&')
@@ -196,9 +196,9 @@ export const getParams = url => {
 }
 
 /**
- * @param {Array} list 标签列表
- * @param {String} name 当前关闭的标签的name
- */
+  * @param {Array} list tag list
+  * @param {String} name The name of the currently closed tag
+  */
 export const getNextRoute = (list, route) => {
   let res = {}
   if (list.length === 2) {
@@ -212,9 +212,9 @@ export const getNextRoute = (list, route) => {
 }
 
 /**
- * @param {Number} times 回调函数需要执行的次数
- * @param {Function} callback 回调函数
- */
+  * @param {Number} times The number of times the callback function needs to be executed
+  * @param {Function} callback callback function
+  */
 export const doCustomTimes = (times, callback) => {
   let i = -1
   while (++i < times) {
@@ -223,19 +223,19 @@ export const doCustomTimes = (times, callback) => {
 }
 
 /**
- * @param {Object} file 从上传组件得到的文件对象
- * @returns {Promise} resolve参数是解析后的二维数组
- * @description 从Csv文件中解析出表格，解析成二维数组
- */
+  * @param {Object} file The file object obtained from the upload component
+  * @returns {Promise} The resolve parameter is a parsed two-dimensional array
+  * @description parses the table from the Csv file and parses it into a two-dimensional array
+  */
 export const getArrayFromFile = (file) => {
   let nameSplit = file.name.split('.')
   let format = nameSplit[nameSplit.length - 1]
   return new Promise((resolve, reject) => {
     let reader = new FileReader()
-    reader.readAsText(file) // 以文本格式读取
+    reader.readAsText(file) // Read in text format
     let arr = []
     reader.onload = function (evt) {
-      let data = evt.target.result // 读到的数据
+      let data = evt.target.result // Read data
       let pasteData = data.trim()
       arr = pasteData.split((/[\n\u0085\u2028\u2029]|\r\n?/g)).map(row => {
         return row.split('\t')
@@ -249,10 +249,10 @@ export const getArrayFromFile = (file) => {
 }
 
 /**
- * @param {Array} array 表格数据二维数组
- * @returns {Object} { columns, tableData }
- * @description 从二维数组中获取表头和表格数据，将第一行作为表头，用于在iView的表格中展示数据
- */
+  * @param {Array} array two-dimensional array of table data
+  * @returns {Object} { columns, tableData }
+  * @description Gets the header and table data from a two-dimensional array, using the first row as a header for displaying data in a table in iView
+  */
 export const getTableDataFromArray = (array) => {
   let columns = []
   let tableData = []
@@ -318,10 +318,10 @@ export const showByAccess = (access, canViewAccess) => {
 }
 
 /**
- * @description 根据name/params/query判断两个路由对象是否相等
- * @param {*} route1 路由对象
- * @param {*} route2 路由对象
- */
+  * @description Determines whether two route objects are equal according to name/params/query
+  * @param {*} route1 route object
+  * @param {*} route2 routing object
+  */
 export const routeEqual = (route1, route2) => {
   const params1 = route1.params || {}
   const params2 = route2.params || {}
@@ -331,8 +331,8 @@ export const routeEqual = (route1, route2) => {
 }
 
 /**
- * 判断打开的标签列表里是否已存在这个新添加的路由对象
- */
+  * Determine if the newly added routing object already exists in the opened tag list.
+  */
 export const routeHasExist = (tagNavList, routeItem) => {
   let len = tagNavList.length
   let res = false
@@ -387,10 +387,10 @@ export const scrollTop = (el, from = 0, to, duration = 500, endCallback) => {
 }
 
 /**
- * @description 根据当前跳转的路由设置显示在浏览器标签的title
- * @param {Object} routeItem 路由对象
- * @param {Object} vm Vue实例
- */
+  * @description Displays the title of the browser tab based on the current routing settings.
+  * @param {Object} routeItem routing object
+  * @param {Object} vm Vue instance
+  */
 export const setTitle = (routeItem, vm) => {
   const handledRoute = getRouteTitleHandled(routeItem)
   const pageTitle = showTitle(handledRoute, vm)

@@ -1,20 +1,20 @@
 <template>
   <Card>
-    <h3 style="padding: 10px 0;">drag-drawer组件是对iview的drawer组件的封装，在支持drawer所有api的基础上，支持可拖动和footer底部插槽</h3>
+    <h3 style="padding: 10px 0;">drag-drawerThe component is a wrapper around iview's drawer component，Supports draggable and footer bottom slots based on support for all apis of drawer</h3>
     <div style="padding: 10px 0">
       <b>
-        方向
+        direction
         <i-switch v-model="placement">
-          <span slot="open">左</span>
-          <span slot="close">右</span>
+          <span slot="open">left</span>
+          <span slot="close">right</span>
         </i-switch>
       </b>
       <b>
-        是否可拖动
+        Can you drag
         <i-switch v-model="draggable"></i-switch>
       </b>
-      <Button @click="showContainerBDrawer = !showContainerBDrawer" type="primary" style="margin-left: 10px">{{ showContainerBDrawer ? '关闭' : '打开' }}容器内抽屉</Button>
-      <Button @click="showWindowBDrawer = true" type="primary" style="margin-left: 10px">打开全屏抽屉</Button>
+      <Button @click="showContainerBDrawer = !showContainerBDrawer" type="primary" style="margin-left: 10px">{{ showContainerBDrawer ? 'Close' : 'Open' }} container drawer</Button>
+      <Button @click="showWindowBDrawer = true" type="primary" style="margin-left: 10px">Open full screen drawer</Button>
     </div>
     <div class="drag-drawer-inner-box">
       <drag-drawer v-model="showContainerBDrawer"
@@ -28,7 +28,7 @@
         :scrollable="true">
         <div slot="header">
           <Icon type="md-aperture" :size="18"></Icon>
-          <b>这是标题</b>
+          <b>This is the title</b>
         </div>
         <p v-for="n in 200" :key="n">{{ n }}</p>
         <div slot="footer">
@@ -45,9 +45,9 @@
       :scrollable="true">
       <div slot="header">
         <Icon type="md-aperture" :size="18"></Icon>
-        <b>这是标题</b>
+        <b>This is the title</b>
       </div>
-      <Button @click="showBDrawer3 = true">显示多层</Button>
+      <Button @click="showBDrawer3 = true">Display multiple layers</Button>
       <p v-for="n in 200" :key="n">{{ n }}</p>
     </drag-drawer>
   </Card>

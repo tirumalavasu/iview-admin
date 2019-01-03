@@ -5,13 +5,13 @@
         <Card>
           <Row>
             <i-col span="8">
-              <Button type="primary" @click="showModal">显示可拖动弹窗</Button>
+              <Button type="primary" @click="showModal">Show draggable pop-up</Button>
               <br/>
-              <Button v-draggable="buttonOptions" class="draggable-btn">这个按钮也是可以拖动的</Button>
+              <Button v-draggable="buttonOptions" class="draggable-btn">This button is also draggable</Button>
             </i-col>
             <i-col span="16">
               <div class="intro-con">
-                &lt;Modal v-draggable="options" v-model="visible"&gt;标题&lt;/Modal&gt;
+                &lt;Modal v-draggable="options" v-model="visible"&gt;title&lt;/Modal&gt;
                 <pre class="code-con">
     options = {
       trigger: '.ivu-modal-body',
@@ -24,7 +24,7 @@
         </Card>
       </i-col>
       <Modal v-draggable="options" v-model="modalVisible">
-        拖动这里即可拖动整个弹窗
+        Drag here to drag the entire popup
       </Modal>
     </Row>
     <Row style="margin-top: 10px;">
@@ -47,10 +47,10 @@
     clipOptions: {
       value: this.inputValue,
       success: (e) => {
-        this.$Message.success('复制成功')
+        this.$Message.success('Successful copy')
       },
       error: () => {
-        this.$Message.error('复制失败')
+        this.$Message.error('Replication failed')
       }
     }
                 </pre>
@@ -60,7 +60,7 @@
         </Card>
       </i-col>
       <Modal v-draggable="options" v-model="modalVisible">
-        拖动这里即可拖动整个弹窗
+        Drag here to drag the entire popup
       </Modal>
     </Row>
   </div>
@@ -82,7 +82,7 @@ export default {
         body: '.draggable-btn'
       },
       statu: 1,
-      inputValue: '这是输入的内容'
+      inputValue: 'This is the input content'
     }
   },
   computed: {
@@ -90,10 +90,10 @@ export default {
       return {
         value: this.inputValue,
         success: (e) => {
-          this.$Message.success('复制成功')
+          this.$Message.success('Successful copy')
         },
         error: () => {
-          this.$Message.error('复制失败')
+          this.$Message.error('Replication failed')
         }
       }
     }

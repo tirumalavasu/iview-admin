@@ -33,18 +33,18 @@ class HttpRequest {
     }
   }
   interceptors (instance, url) {
-    // 请求拦截
+    // Request interception
     instance.interceptors.request.use(config => {
-      // 添加全局的loading...
+      // Add global loading...
       if (!Object.keys(this.queue).length) {
-        // Spin.show() // 不建议开启，因为界面不友好
+        // Spin.show() // Not recommended to open because the interface is not friendly
       }
       this.queue[url] = true
       return config
     }, error => {
       return Promise.reject(error)
     })
-    // 响应拦截
+    // Response interception
     instance.interceptors.response.use(res => {
       this.destroy(url)
       const { data, status } = res

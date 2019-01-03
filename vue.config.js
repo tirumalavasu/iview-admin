@@ -4,14 +4,14 @@ const resolve = dir => {
   return path.join(__dirname, dir)
 }
 
-// 项目部署基础
-// 默认情况下，我们假设你的应用将被部署在域的根目录下,
-// 例如：https://www.my-app.com/
-// 默认：'/'
-// 如果您的应用程序部署在子路径中，则需要在这指定子路径
-// 例如：https://www.foobar.com/my-app/
-// 需要将它改为'/my-app/'
-// iview-admin线上演示打包路径： https://file.iviewui.com/admin-dist/
+// Project deployment basis
+//By default, we assume that your app will be deployed in the root of the domain.
+// E.g：https://www.my-app.com/
+//default：'/'
+// If your application is deployed in a subpath, you need to specify a subpath here.
+// E.g：https://www.foobar.com/my-app/
+// Need to change it to'/my-app/'
+// iview-admin Online demo package path： https://file.iviewui.com/admin-dist/
 const BASE_URL = process.env.NODE_ENV === 'production'
   ? '/'
   : '/'
@@ -27,16 +27,19 @@ module.exports = {
   baseUrl: BASE_URL,
   // tweak internal webpack configuration.
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
-  // 如果你不需要使用eslint，把lintOnSave设为false即可
+  // If you don't need to use eslint，把lintOnSave Set tofalse即可
   lintOnSave: true,
   chainWebpack: config => {
     config.resolve.alias
-      .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
+      .set('@', resolve('src')) // key,value Define it yourself, such as
+      .set('@@', resolve('src/components'))
       .set('_c', resolve('src/components'))
   },
-  // 设为false打包时不生成.map文件
+  // Does not generate a .map file when set to false.
+
   productionSourceMap: false
-  // 这里写你调用接口的基础路径，来解决跨域，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
+  // Write the base path of the interface you call here to solve the cross-domain. If the proxy is set, then the baseUrl of your local development environment axios should be written as '', ie an empty string.
+
   // devServer: {
   //   proxy: 'localhost:3000'
   // }

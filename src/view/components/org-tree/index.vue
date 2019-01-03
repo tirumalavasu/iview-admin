@@ -3,7 +3,7 @@
     <div class="department-outer">
       <div class="tip-box">
         <b style="margin-right: 20px;">powered by <a target="blank" href="https://github.com/lison16">Lison</a></b>
-        <a target="blank" href="https://github.com/lison16/v-org-tree" style="margin-right: 10px;">v-org-tree文档</a>
+        <a target="blank" href="https://github.com/lison16/v-org-tree" style="margin-right: 10px;">v-org-tree document</a>
       </div>
       <div class="zoom-box">
         <zoom-controller v-model="zoom" :min="20" :max="200"></zoom-controller>
@@ -26,10 +26,10 @@ import ZoomController from './components/zoom-controller.vue'
 import { getOrgData } from '@/api/data'
 import './index.less'
 const menuDic = {
-  edit: '编辑部门',
-  detail: '查看部门',
-  new: '新增子部门',
-  delete: '删除部门'
+  edit: 'edit department',
+   detail: 'View department',
+   new: 'Add sub-department',
+   delete: 'delete department'
 }
 export default {
   name: 'org_tree_page',
@@ -57,7 +57,7 @@ export default {
       console.log(data, key)
       this.$Message.success({
         duration: 5,
-        content: `点击了《${data.label}》节点的'${menuDic[key]}'菜单`
+        content: `Clicked "${data.label}Node'${menuDic[key]}'menu`
       })
     },
     getDepartmentData () {

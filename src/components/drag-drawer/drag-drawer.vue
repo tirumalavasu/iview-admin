@@ -6,7 +6,7 @@
           :class-name="outerClasses"
           v-bind="$attrs"
           v-on="$listeners">
-    <!-- 所有插槽内容显示在这里 ↓ -->
+    <!-- All slot contents are displayed here ↓ -->
 
     <template v-for="(slots, slotsName) in $slots">
       <template v-if="slotsName !== 'default'">
@@ -27,7 +27,8 @@
         </div>
       </template>
     </template>
-    <!-- 所有插槽内容显示在这里 ↑ -->
+    <!-- 
+All slot contents are displayed here ↑ -->
     <div v-if="draggable"
          :style="triggerStyle"
          :class="`${prefix}-trigger-wrapper`"
@@ -65,12 +66,14 @@ export default {
       type: [String, Number],
       default: 256
     },
-    // 是否可拖动修改宽度
+    // Whether to drag and modify the width
+
     draggable: {
       type: Boolean,
       default: false
     },
-    // 最小拖动宽度
+    // Minimum drag width
+
     minWidth: {
       type: [String, Number],
       default: 256
@@ -112,20 +115,20 @@ export default {
     handleTriggerMousedown (event) {
       this.canMove = true
       this.$emit('on-resize-start')
-      // 防止鼠标选中抽屉中文字，造成拖动trigger触发浏览器原生拖动行为
+      // Prevent the mouse from selecting the text in the drawer, causing the drag trigger to trigger the browser's native drag behavior
       window.getSelection().removeAllRanges()
     },
     handleMousemove (event) {
       if (!this.canMove) return
-      // 更新容器宽度和距离左侧页面距离，如果是window则距左侧距离为0
+//Update the width of the container and the distance from the left page. If it is window, the distance from the left is 0.
       this.setWrapperWidth()
       const left = event.pageX - this.wrapperLeft
-      // 如果抽屉方向为右边，宽度计算需用容器宽度减去left
+//If the drawer direction is to the right, the width calculation needs to use the container width minus the left
       let width = this.placement === 'right' ? this.wrapperWidth - left : left
-      // 限定做小宽度
+      // Limited to make small width
       width = Math.max(width, parseFloat(this.minWidth))
       event.atMin = width === parseFloat(this.minWidth)
-      // 如果当前width不大于100，视为百分比
+      // If the current width is not greater than 100, it is treated as a percentage
       if (width <= 100) width = (width / this.wrapperWidth) * 100
       this.$emit('update:width', parseInt(width))
       this.$emit('on-resize', event)

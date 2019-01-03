@@ -1,5 +1,5 @@
 <template>
-  <error-content code="404" desc="Oh~~您的页面好像飞走了~" :src="src"/>
+  <error-content code="404" desc="Oh~~ Your page seems to fly away~" :src="src"/>
 </template>
 
 <script>

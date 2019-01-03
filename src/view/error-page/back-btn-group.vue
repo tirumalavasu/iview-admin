@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Button size="large" type="text" @click="backHome">返回首页</Button>
-    <Button size="large" type="text" @click="backPrev">返回上一页({{ second }}s)</Button>
+    <Button size="large" type="text" @click="backHome">Back to home</Button>
+    <Button size="large" type="text" @click="backPrev">return to previous page({{ second }}s)</Button>
   </div>
 </template>
 

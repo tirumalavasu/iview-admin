@@ -18,7 +18,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: '从网页或其他应用软件复制表格数据，粘贴到这里 。默认第一行是表头，使用回车键添加新行，使用Tab键区分列。'
+      default: 'Copy the form data from a web page or other application and paste it here. The default first line is the header, use the Enter key to add a new line, and use the Tab key to distinguish the column.'
     }
   },
   data () {
@@ -48,7 +48,7 @@ export default {
       this.handleAreaData()
     },
     /**
-     * @description 处理粘贴操作
+     * @description Handling paste operations
      */
     handleContentChanged (content) {
       let pasteData = content.trim()
@@ -63,7 +63,7 @@ export default {
       this.$emit('input', this.pasteDataArr)
     },
     /**
-     * @description 检查除第一行的每一行列数是否与第一行相同
+     * @description Check if the number of columns in each row except the first row is the same as the first row
      */
     checkColNumInEveryRow () {
       let i = 0
@@ -81,13 +81,13 @@ export default {
       return true
     },
     /**
-     * @description 标记不符合格式的一行
+     * @description Mark a line that does not match the format
      */
     markIncorrectRow (index) {
       this.editor.addLineClass(index, 'text', 'incorrect-row')
     },
     /**
-     * @description 标记不符合格式的一行
+     * @description Mark a line that does not match the format
      */
     clearLineClass () {
       forEach(this.pasteDataArr, (item, index) => {

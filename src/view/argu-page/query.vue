@@ -2,7 +2,7 @@
   <div>
     <Card>
       <h2>ID: {{ $route.query.id }}</h2>
-      <Button @click="close">调用closeTag方法关闭本页</Button>
+      <Button @click="close">Call the closeTag method to close this page</Button>
     </Card>
   </div>
 </template>
@@ -17,9 +17,9 @@ export default {
     ]),
     close () {
       /**
-       * 如果是调用closeTag方法，普通的页面传入的对象参数只需要写name字段即可
-       * 如果是动态路由和带参路由，需要传入query或params字段，用来区别关闭的是参数为多少的页面
-       */
+        * If the closeTag method is called, the object parameters passed in the ordinary page only need to write the name field.
+        * If it is a dynamic route and a parameter-based route, you need to pass in the query or params field to distinguish between the closed parameters and the number of pages.
+        */
       this.closeTag({
         name: 'query',
         query: {

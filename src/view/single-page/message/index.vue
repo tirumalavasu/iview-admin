@@ -4,13 +4,13 @@
       <div class="message-page-con message-category-con">
         <Menu width="auto" active-name="unread" @on-select="handleSelect">
           <MenuItem name="unread">
-            <span class="category-title">未读消息</span><Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge>
+            <span class="category-title">Unread message</span><Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge>
           </MenuItem>
           <MenuItem name="readed">
-            <span class="category-title">已读消息</span><Badge style="margin-left: 10px" class-name="gray-dadge" :count="messageReadedCount"></Badge>
+            <span class="category-title">Read message</span><Badge style="margin-left: 10px" class-name="gray-dadge" :count="messageReadedCount"></Badge>
           </MenuItem>
           <MenuItem name="trash">
-            <span class="category-title">回收站</span><Badge style="margin-left: 10px" class-name="gray-dadge" :count="messageTrashCount"></Badge>
+            <span class="category-title">Recycle bin</span><Badge style="margin-left: 10px" class-name="gray-dadge" :count="messageTrashCount"></Badge>
           </MenuItem>
         </Menu>
       </div>
@@ -32,7 +32,7 @@
                 :loading="item.loading"
                 size="small"
                 :icon="currentMessageType === 'readed' ? 'md-trash' : 'md-redo'"
-                :title="currentMessageType === 'readed' ? '删除' : '还原'"
+                :title="currentMessageType === 'readed' ? 'delete' : 'reduction'"
                 type="text"
                 v-show="currentMessageType !== 'unread'"
                 @click.native.stop="removeMsg(item)"></Button>
@@ -128,7 +128,7 @@ export default {
   },
   mounted () {
     this.listLoading = true
-    // 请求获取消息列表
+    // Request to get a list of messages
     this.getMessageList().then(() => this.stopLoading('listLoading')).catch(() => this.stopLoading('listLoading'))
   }
 }

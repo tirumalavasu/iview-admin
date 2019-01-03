@@ -5,7 +5,7 @@
         <Card>
           <p slot="title">
             <Icon type="waterdrop"></Icon>
-            count-to组件基础用法
+            count-to component basic usage
           </p>
           <Row type="flex" justify="center" align="middle" class="countto-page-row">
             <div class="count-to-con">
@@ -18,7 +18,7 @@
           <Card>
             <p slot="title">
               <Icon type="code"></Icon>
-              可添加左右文字
+              Can add left and right text
             </p>
             <Row type="flex" justify="center" align="middle" class="countto-page-row">
               <div class="count-to-con">
@@ -34,7 +34,7 @@
           <Card>
             <p slot="title">
               <Icon type="paintbucket"></Icon>
-              自定义样式
+              Custom style
             </p>
             <Row type="flex" justify="center" align="middle" class="countto-page-row">
               <div class="count-to-con">
@@ -50,7 +50,7 @@
           <Card>
             <p slot="title">
               <Icon type="settings"></Icon>
-              设置数据格式
+              Set the data format
             </p>
             <Row type="flex" justify="center" align="middle" class="countto-page-row">
               <div class="count-to-con">
@@ -68,7 +68,7 @@
         <Card>
           <p slot="title">
             <Icon type="ios-color-wand"></Icon>
-            转换单位简化数据
+            Conversion unit simplifies data
           </p>
           <Row type="flex" justify="center" align="middle" class="countto-page-row">
             <div class="count-to-con">
@@ -84,18 +84,18 @@
         <Card>
           <p slot="title">
             <Icon type="ios-shuffle-strong"></Icon>
-            自定义单位
+            Custom unit
           </p>
           <Row type="flex" justify="center" align="middle" class="countto-page-row">
             <div class="count-to-con">
               <count-to :simplify="true" :unit="unit" :end="253" count-class="count-text" unit-class="unit-class">
-                <span class="slot-text" slot="left">原始数据：253&nbsp;=>&nbsp;</span>
+                <span class="slot-text" slot="left">Raw data: 253&nbsp;=>&nbsp;</span>
               </count-to>
               <count-to :simplify="true" :unit="unit" :end="2534" count-class="count-text" unit-class="unit-class">
-                <span class="slot-text" slot="left">原始数据：2534&nbsp;=>&nbsp;</span>
+                <span class="slot-text" slot="left">Raw data: 2534&nbsp;=>&nbsp;</span>
               </count-to>
               <count-to :simplify="true" :unit="unit" :end="257678" count-class="count-text" unit-class="unit-class">
-                <span class="slot-text" slot="left">原始数据：257678&nbsp;=>&nbsp;</span>
+                <span class="slot-text" slot="left">Raw data: 257678&nbsp;=>&nbsp;</span>
               </count-to>
             </div>
           </Row>
@@ -105,7 +105,7 @@
         <Card>
           <p slot="title">
             <Icon type="android-stopwatch"></Icon>
-            可异步更新数据
+            Update data asynchronously
           </p>
           <Row type="flex" justify="center" align="middle" class="countto-page-row">
             <div class="count-to-con">
@@ -123,12 +123,12 @@
         <Card>
           <p slot="title">
             <Icon type="ios-analytics"></Icon>
-            综合实例
+            Comprehensive example
           </p>
           <Row type="flex" justify="center" align="middle" class="countto-page-row">
             <div class="count-to-con">
               <count-to :delay="500" :simplify="true" :unit="unit2" :end="integratedEndVal" count-class="count-text" unit-class="unit-class">
-                <span class="slot-text" slot="left">原始数据:&nbsp;{{ integratedEndVal }}&nbsp;=>&nbsp;</span>
+                <span class="slot-text" slot="left">Raw data:&nbsp;{{ integratedEndVal }}&nbsp;=>&nbsp;</span>
                 <span class="slot-text" slot="right">&nbsp;times</span>
               </count-to>
             </div>
@@ -149,8 +149,8 @@ export default {
   data () {
     return {
       end: 0,
-      unit: [[3, '千多'], [4, '万多'], [5, '十万多']],
-      unit2: [[1, '十多'], [2, '百多'], [3, '千多'], [4, '万多'], [5, '十万多'], [6, '百万多'], [7, '千万多'], [8, '亿多']],
+      unit: [[3, 'More than a thousand'], [4, 'Million'], [5, 'More than 100,000']],
+      unit2: [[1, 'More than ten'], [2, 'More than one hundred'], [3, 'More than a thousand'], [4, 'Million'], [5, 'More than 100,000'], [6, 'More than one million'], [7, 'More than ten million'], [8, 'Billion more']],
       asynEndVal: 487,
       integratedEndVal: 3
     }

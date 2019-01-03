@@ -23,19 +23,19 @@ import { on, off } from '@/libs/tools'
 const menuList = [
   {
     key: 'edit',
-    label: '编辑部门'
+    label: 'Editorial department'
   },
   {
     key: 'detail',
-    label: '查看部门'
+    label: 'View department'
   },
   {
     key: 'new',
-    label: '新增子部门'
+    label: 'New sub-department'
   },
   {
     key: 'delete',
-    label: '删除部门'
+    label: 'Delete department'
   }
 ]
 export default {

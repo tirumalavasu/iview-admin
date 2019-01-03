@@ -21,13 +21,13 @@ export default {
   data () {
     return {
       langList: {
-        'zh-CN': '语言',
-        'zh-TW': '語言',
+        'zh-CN': 'Language',
+        'zh-TW': 'Language',
         'en-US': 'Lang'
       },
       localList: {
-        'zh-CN': '中文简体',
-        'zh-TW': '中文繁体',
+        'zh-CN': 'Chinese simplified',
+        'zh-TW': 'traditional Chinese',
         'en-US': 'English'
       }
     }

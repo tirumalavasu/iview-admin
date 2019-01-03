@@ -6,8 +6,8 @@
           <Icon :size="18" type="ios-close-circle-outline" />
         </Button>
         <DropdownMenu slot="list">
-          <DropdownItem name="close-all">关闭所有</DropdownItem>
-          <DropdownItem name="close-others">关闭其他</DropdownItem>
+          <DropdownItem name="close-all">Close all</DropdownItem>
+          <DropdownItem name="close-others">Close other</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </div>
@@ -69,8 +69,8 @@ export default {
       contextMenuTop: 0,
       visible: false,
       menuList: {
-        others: '关闭其他',
-        all: '关闭所有'
+        others: 'Close other',
+        all: 'Close all'
       }
     }
   },
@@ -108,11 +108,11 @@ export default {
     },
     handleTagsOption (type) {
       if (type.includes('all')) {
-        // 关闭所有，除了home
+        // Close all except home
         let res = this.list.filter(item => item.name === this.$config.homeName)
         this.$emit('on-close', res, 'all')
       } else if (type.includes('others')) {
-        // 关闭除当前页和home页的其他页
+        // Close other pages except the current page and the home page
         let res = this.list.filter(item => routeEqual(this.currentRouteObj, item) || item.name === this.$config.homeName)
         this.$emit('on-close', res, 'others', this.currentRouteObj)
         setTimeout(() => {
@@ -150,13 +150,13 @@ export default {
       if (bodyWidth < outerWidth) {
         this.tagBodyLeft = 0
       } else if (tag.offsetLeft < -this.tagBodyLeft) {
-        // 标签在可视区域左侧
+        // Label on the left side of the viewable area
         this.tagBodyLeft = -tag.offsetLeft + this.outerPadding
       } else if (tag.offsetLeft > -this.tagBodyLeft && tag.offsetLeft + tag.offsetWidth < -this.tagBodyLeft + outerWidth) {
-        // 标签在可视区域
+        // Label in visible area
         this.tagBodyLeft = Math.min(0, outerWidth - tag.offsetWidth - tag.offsetLeft - this.outerPadding)
       } else {
-        // 标签在可视区域右侧
+        // Label on the right side of the viewable area
         this.tagBodyLeft = -(tag.offsetLeft - (outerWidth - this.outerPadding - tag.offsetWidth))
       }
     },

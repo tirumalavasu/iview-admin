@@ -4,8 +4,8 @@
       <Select v-model="searchKey" class="search-col">
         <Option v-for="item in columns" v-if="item.key !== 'handle'" :value="item.key" :key="`search-col-${item.key}`">{{ item.title }}</Option>
       </Select>
-      <Input @on-change="handleClear" clearable placeholder="输入关键字搜索" class="search-input" v-model="searchValue"/>
-      <Button @click="handleSearch" class="search-btn" type="primary"><Icon type="search"/>&nbsp;&nbsp;搜索</Button>
+      <Input @on-change="handleClear" clearable placeholder="Enter keyword search" class="search-input" v-model="searchValue"/>
+      <Button @click="handleSearch" class="search-btn" type="primary"><Icon type="search"/>&nbsp;&nbsp;search for</Button>
     </div>
     <Table
       ref="tablesMain"
@@ -42,8 +42,8 @@
       <Select v-model="searchKey" class="search-col">
         <Option v-for="item in columns" v-if="item.key !== 'handle'" :value="item.key" :key="`search-col-${item.key}`">{{ item.title }}</Option>
       </Select>
-      <Input placeholder="输入关键字搜索" class="search-input" v-model="searchValue"/>
-      <Button class="search-btn" type="primary"><Icon type="search"/>&nbsp;&nbsp;搜索</Button>
+      <Input placeholder="Enter keyword search" class="search-input" v-model="searchValue"/>
+      <Button class="search-btn" type="primary"><Icon type="search"/>&nbsp;&nbsp;search for</Button>
     </div>
     <a id="hrefToExportTable" style="display: none;width: 0px;height: 0px;"></a>
   </div>
@@ -114,21 +114,21 @@ export default {
       default: false
     },
     /**
-     * @description 全局设置是否可编辑
+     * @description Is the global setting editable?
      */
     editable: {
       type: Boolean,
       default: false
     },
     /**
-     * @description 是否可搜索
+     * @description Is it searchable?
      */
     searchable: {
       type: Boolean,
       default: false
     },
     /**
-     * @description 搜索控件所在位置，'top' / 'bottom'
+     * @description Search for the location of the control,'top' / 'bottom'
      */
     searchPlace: {
       type: String,
@@ -137,9 +137,9 @@ export default {
   },
   /**
    * Events
-   * @on-start-edit 返回值 {Object} ：同iview中render函数中的params对象 { row, index, column }
-   * @on-cancel-edit 返回值 {Object} 同上
-   * @on-save-edit 返回值 {Object} ：除上面三个参数外，还有一个value: 修改后的数据
+   * @on-start-edit return value {Object} : Params object in the render function with iview { row, index, column }
+   * @on-cancel-edit return value {Object} Ibid.
+   * @on-save-edit return value {Object} ：In addition to the above three parameters, there is also a value: modified data
    */
   data () {
     return {

@@ -1,7 +1,7 @@
 <p align="center">
-    <a href="https://www.iviewui.com">
-        <img width="200" src="https://file.iviewui.com/logo-new.svg">
-    </a>
+    <a href="https://www.iviewui.com">
+        <img width="200" src="https://file.iviewui.com/logo-new.svg">
+    </a>
 </p>
 
 # iView Admin
@@ -12,103 +12,103 @@
 [![iview ui](https://img.shields.io/badge/iview-3.1.3-brightgreen.svg?style=flat-square)](https://github.com/iview/iview)
 [![npm](https://img.shields.io/npm/l/express.svg)]()
 
-[更新日志](https://github.com/iview/iview-admin/releases)
+[Update Log] (https://github.com/iview/iview-admin/releases)
 
-[使用文档](https://lison16.github.io/iview-admin-doc/#/)
+[Using Documentation] (https://lison16.github.io/iview-admin-doc/#/)
 
-[在线访问](https://admin.iviewui.com/)
+[Online Access] (https://admin.iviewui.com/)
 
-[简化版模板](https://github.com/iview/iview-admin/tree/template)
+[Simplified Template] (https://github.com/iview/iview-admin/tree/template)
 
-[教学视频(26课时)](https://segmentfault.com/ls/1650000016221751?utm_source=banner)
+[Teaching Video (26 lessons)] (https://segmentfault.com/ls/1650000016221751?utm_source=banner)
 
-`注：在线版本会在开发版本新小版本发布后更新到相应版本，所以如果想体验最新版本iview-admin，请clone完整项目代码到本地运行。`
+`Note: The online version will be updated to the corresponding version after the new version of the development version is released, so if you want to experience the latest version of iview-admin, please clone the full project code to run locally. `
 
 ## Install
 ```bush
 // install dependencies
-npm install
+Npm install
 ```
 ## Run
 ### Development
 ```bush
-npm run dev
+Npm run dev
 ```
 ### Production(Build)
 ```bush
-npm run build
+Npm run build
 ```
 
-## 简介
-&emsp;&emsp;iView admin是基于Vue.js，搭配使用[iView](https://www.iviewui.com) UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。iView admin遵守iView设计和开发约定，风格统一，设计考究，并且更多功能在不停开发中。
-如果您想查看iview-admin的更新动态，您可以到[更新日志](https://github.com/iview/iview-admin/releases)查看了解最新更新；如果您是新手，想快速入手iview-admin，您可以到[使用教程](https://github.com/iview/iview-admin/wiki)查看讲解；如果您想在线体验iview-admin，您可以到[在线访问](https://admin.iviewui.com/)体验。如果你只是想要一个清醒爽朗的界面，那你可以下载[简化版模板](https://github.com/iview/iview-admin/tree/template)来做开发。
+## Introduction
+&emsp;&emsp;iView admin is a set of background integration solution based on Vue.js and using [iView](https://www.iviewui.com) UI component library, developed and maintained by some members of the TalkingData front-end visualization team. iView admin adheres to iView design and development conventions, with a consistent style, sophisticated design, and more features are constantly being developed.
+If you want to check the update status of iview-admin, you can check the latest update by going to [Update Log] (https://github.com/iview/iview-admin/releases); if you are a newbie, you want to get started quickly iview- Admin, you can go to [Use Tutorial] (https://github.com/iview/iview-admin/wiki) to view the explanation; if you want to experience iview-admin online, you can go to [Online Access] (https:// Admin.iviewui.com/) experience. If you just want a slick interface, you can download [Simplified Templates] (https://github.com/iview/iview-admin/tree/template) for development.
 
-## 功能
+## Features
 
-- 登录/登出
-- 权限管理
-    - 列表过滤
-    - 权限切换
-- 多语言切换
-- 组件
-    - 富文本编辑器
-    - Markdown编辑器
-    - 城市级联
-    - 图片预览编辑
-    - 可拖拽列表
-    - 文件上传
-    - 数字渐变
-    - split-pane
-- 表单编辑
-    - 文章发布
-    - 工作流
-- 表格
-    - 可拖拽排序
-    - 可编辑表格
-        - 行内编辑
-        - 单元格编辑
-    - 可搜索表格
-    - 表格导出数据
-        - 导出为Csv文件
-        - 导出为Xls文件
-    - 表格转图片
-- 错误页面
-    - 403页面
-    - 404页面
-    - 500页面
-- 高级路由
-    - 动态路由
-    - 带参页面
-- 换肤
-- 收缩侧边栏
-- tag标签导航
-- 面包屑导航
-- 全屏/退出全屏
-- 锁屏
-- 消息中心
-- 个人中心
+- Login / Logout
+- authority management
+    - List filtering
+    - Permission switching
+- Multi-language switching
+- components
+    - Rich text editor
+    - Markdown editor
+    - City Cascade
+    - Image preview editing
+    - Draggable list
+    - File Upload
+    - Digital gradient
+    - split-pane
+- Form editing
+    - Article release
+    - Workflow
+- Form
+    - Drag and drop sort
+    - Editable form
+        - Inline editing
+        - Cell editing
+    - Searchable form
+    - Table export data
+        - Export as a Csv file
+        - Export to Xls file
+    - Form to picture
+- Error page
+    - 403 pages
+    - 404 page
+    - 500 pages
+- Advanced routing
+    - Dynamic routing
+    - with reference page
+- Skinning
+- Shrink sidebar
+- tag tag navigation
+- Breadcrumbs
+- Full screen / exit full screen
+- Lock screen
+- Message Center
+- Personal Center
 
-## 文件结构
+## File Structure
 ```shell
 .
-├── build  项目构建配置
-├── config  开发相关配置
-├── public  打包所需静态资源
+├──Build project build configuration
+├── config development related configuration
+├── public packing required static resources
 └── src
-    ├── api  AJAX请求
-    └── assets  项目静态资源
-        ├── icons  自定义图标资源
-        └── images  图片资源
-    ├── components  业务组件
-    ├── config  项目运行配置
-    ├── directive  自定义指令
-    ├── libs  封装工具函数
-    ├── locale  多语言文件
-    ├── mock  mock模拟数据
-    ├── router  路由配置
-    ├── store  Vuex配置
-    ├── view  页面文件
-    └── tests  测试相关
+    ├── api AJAX request
+    └── assets project static resources
+        ├── icons Custom icon resources
+        └── images Picture resources
+    ├── components business components
+    ├── config project running configuration
+    ├── directive custom directive
+    ├── libs wrapper tool function
+    ├── locale multilingual files
+    ├── mock mock simulation data
+    ├── router routing configuration
+    ├── store Vuex configuration
+    ├── view page file
+    └── tests test related
 ```
 
 ## Links
@@ -118,63 +118,63 @@ npm run build
 - [Vue](https://github.com/vuejs/vue)
 - [Webpack](https://github.com/webpack/webpack)
 
-## 效果展示
+## Show results
 
-- 响应式布局首页
+- Responsive layout homepage
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/home.gif)
 
-- 标签导航
+- Label navigation
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/page-tags.gif)
 
-- 权限管理
+- authority management
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/access.gif)
 
-- 可拖拽列表
+- Draggable list
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/dragable-list.gif)
 
-- 图片预览编辑
+- Image preview editing
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/image-editor.gif)
 
-- 文件上传
+- File Upload
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/upload.gif)
 
-- 数字渐变
+- Digital gradient
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/count-to.gif)
 
 - split-pane
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/split-pane.gif)
 
-- 文章发布
+- Article release
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/article-publish.gif)
 
-- 工作流
+- Workflow
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/workflow.gif)
 
-- 可拖拽表格
+- Drag and drop forms
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/dragable-table.gif)
 
-- 可编辑表格
+- Editable form
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/editable-table.gif)
 
-- 表格导出数据
+- Table export data
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/exportable-table.gif)
 
-- 表格转图片
+- Form to picture
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/table2image.gif)
 
-- 错误页面
+- Error page
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/error-page.gif)
 
-- 锁屏
+- Lock screen
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/locking.gif)
 
-- 可收缩侧边栏
+- Shrinkable sidebar
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/sidebarmenu.gif)
 
-- 主题切换
+- Theme switching
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/theme.gif)
 
-- 消息中心
+- Message Center
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/message.gif)
 
 ### 💖💖 If you find this project helpful, maybe you can buy me a coffee. 💖💖
@@ -182,6 +182,6 @@ npm run build
 
 
 ## License
-[MIT](http://opensource.org/licenses/MIT)
+[MIT] (http://opensource.org/licenses/MIT)
 
 Copyright (c) 2016-present, iView

@@ -17,78 +17,86 @@ export default {
       default: 0
     },
     /**
-     * @description 起始值，即动画开始前显示的数值
+     * @description The starting value, which is the value displayed before the animation starts.
      */
     startVal: {
       type: Number,
       default: 0
     },
     /**
-     * @description 结束值，即动画结束后显示的数值
+     * @description End value, which is the value displayed after the animation ends
      */
     end: {
       type: Number,
       required: true
     },
     /**
-     * @description 保留几位小数
+     * @description Keep a few decimals
+
      */
     decimals: {
       type: Number,
       default: 0
     },
     /**
-     * @description 分隔整数和小数的符号，默认是小数点
+     * @description 
+A symbol that separates integers and decimals. The default is the decimal point.
      */
     decimal: {
       type: String,
       default: '.'
     },
     /**
-     * @description 动画持续的时间，单位是秒
+     * @description The duration of the animation, in seconds
+
      */
     duration: {
       type: Number,
       default: 2
     },
     /**
-     * @description 动画延迟开始的时间，单位是秒
+     * @description The time the animation delay starts, in seconds
      */
     delay: {
       type: Number,
       default: 0
     },
     /**
-     * @description 是否禁用easing动画效果
+     * @description Whether to disable the easing animation effect
+
      */
     uneasing: {
       type: Boolean,
       default: false
     },
     /**
-     * @description 是否使用分组，分组后每三位会用一个符号分隔
+     * @description Whether to use grouping, every three digits will be separated by one symbol after grouping
+
      */
     usegroup: {
       type: Boolean,
       default: false
     },
     /**
-     * @description 用于分组(usegroup)的符号
+     * @description 
+Symbol for grouping (usegroup)
      */
     separator: {
       type: String,
       default: ','
     },
     /**
-     * @description 是否简化显示，设为true后会使用unit单位来做相关省略
+     * @description 
+Whether to simplify the display, set to true will use the unit unit to do the relevant omission
      */
     simplify: {
       type: Boolean,
       default: false
     },
     /**
-     * @description 自定义单位，如[3, 'K+'], [6, 'M+']即大于3位数小于6位数的用k+来做省略
-     *              1000即显示为1K+
+     * @description Custom units, such as [3, 'K+'], [6, 'M+'], that is, more than 3 digits less than 6 digits are omitted with k+
+
+     *              1000That is shown as1K+
      */
     unit: {
       type: Array,

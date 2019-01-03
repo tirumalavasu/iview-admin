@@ -52,7 +52,7 @@ export default {
   /**
    * Events
    * @on-move-start
-   * @on-moving 返回值：事件对象，但是在事件对象中加入了两个参数：atMin(当前是否在最小值处), atMax(当前是否在最大值处)
+   * @on-moving Return value: Event object, but two parameters are added to the event object: atMin (currently at the minimum value), atMax (currently at the maximum value)
    * @on-move-end
    */
   data () {

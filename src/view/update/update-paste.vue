@@ -6,8 +6,8 @@
           <paste-editor v-model="pasteDataArr" @on-success="handleSuccess" @on-error="handleError"/>
         </div>
         <div class="update-paste-btn-con">
-          <span class="paste-tip">使用Tab键换列，使用回车键换行</span>
-          <Button type="primary" style="float: right;" @click="handleShow">显示表格数据</Button>
+          <span class="paste-tip">Use the Tab key to change columns, use the Enter key to wrap</span>
+          <Button type="primary" style="float: right;" @click="handleShow">Display tabular data</Button>
         </div>
       </Card>
     </i-col>
@@ -47,8 +47,8 @@ export default {
     handleShow () {
       if (!this.validated) {
         this.$Notice.error({
-          title: '您的内容不规范',
-          desc: `您的第${this.errorIndex + 1}行数据不规范，请修改`
+          title: 'Your content is not standardized',
+          desc: `Your number${this.errorIndex + 1}Row data is not standardized, please modify`
         })
       } else {
         let { columns, tableData } = getTableDataFromArray(this.pasteDataArr)

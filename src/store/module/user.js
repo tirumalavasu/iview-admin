@@ -73,7 +73,7 @@ export default {
     messageTrashCount: state => state.messageTrashList.length
   },
   actions: {
-    // 登录
+    // log in
     handleLogin ({ commit }, {userName, password}) {
       userName = userName.trim()
       return new Promise((resolve, reject) => {
@@ -89,7 +89,7 @@ export default {
         })
       })
     },
-    // 退出登录
+    // sign out
     handleLogOut ({ state, commit }) {
       return new Promise((resolve, reject) => {
         logout(state.token).then(() => {
@@ -99,13 +99,13 @@ export default {
         }).catch(err => {
           reject(err)
         })
-        // 如果你的退出登录无需请求接口，则可以直接使用下面三行代码而无需使用logout调用接口
-        // commit('setToken', '')
-        // commit('setAccess', [])
-        // resolve()
+       // If your exit login does not require an interface, you can use the following three lines of code without calling the interface with logout
+                // commit('setToken', '')
+                // commit('setAccess', [])
+                // resolve()
       })
     },
-    // 获取用户相关信息
+    // Get user related information
     getUserInfo ({ state, commit }) {
       return new Promise((resolve, reject) => {
         try {
@@ -125,14 +125,14 @@ export default {
         }
       })
     },
-    // 此方法用来获取未读消息条数，接口只返回数值，不返回消息列表
+    // This method is used to get the number of unread messages. The interface only returns the value and does not return the message list.
     getUnreadMessageCount ({ state, commit }) {
       getUnreadCount().then(res => {
         const { data } = res
         commit('setMessageCount', data)
       })
     },
-    // 获取消息列表，其中包含未读、已读、回收站三个列表
+    // Get a list of messages with three lists of unread, read, and recycle bins
     getMessageList ({ state, commit }) {
       return new Promise((resolve, reject) => {
         getMessage().then(res => {
@@ -152,7 +152,7 @@ export default {
         })
       })
     },
-    // 根据当前点击的消息的id获取内容
+    // Get content based on the id of the currently clicked message
     getContentByMsgId ({ state, commit }, { msg_id }) {
       return new Promise((resolve, reject) => {
         let contentItem = state.messageContentStore[msg_id]
@@ -167,7 +167,7 @@ export default {
         }
       })
     },
-    // 把一个未读消息标记为已读
+    // Mark an unread message as read
     hasRead ({ state, commit }, { msg_id }) {
       return new Promise((resolve, reject) => {
         hasRead(msg_id).then(() => {
@@ -183,7 +183,7 @@ export default {
         })
       })
     },
-    // 删除一个已读消息到回收站
+    // Delete a read message to the recycle bin
     removeReaded ({ commit }, { msg_id }) {
       return new Promise((resolve, reject) => {
         removeReaded(msg_id).then(() => {
@@ -198,7 +198,7 @@ export default {
         })
       })
     },
-    // 还原一个已删除消息到已读消息
+    // Restore a deleted message to a read message
     restoreTrash ({ commit }, { msg_id }) {
       return new Promise((resolve, reject) => {
         restoreTrash(msg_id).then(() => {

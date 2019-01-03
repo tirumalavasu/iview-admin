@@ -15,32 +15,32 @@ const router = new Router({
 const LOGIN_PAGE_NAME = 'login'
 
 const turnTo = (to, access, next) => {
-  if (canTurnTo(to.name, access, routes)) next() // 有权限，可访问
-  else next({ replace: true, name: 'error_401' }) // 无权限，重定向到401页面
+  if (canTurnTo(to.name, access, routes)) next() // Have access, access
+  else next({ replace: true, name: 'error_401' }) // No permission, redirect to 401 page
 }
 
 router.beforeEach((to, from, next) => {
   iView.LoadingBar.start()
   const token = getToken()
   if (!token && to.name !== LOGIN_PAGE_NAME) {
-    // 未登录且要跳转的页面不是登录页
+    // The page that is not logged in and wants to jump is not the login page
     next({
-      name: LOGIN_PAGE_NAME // 跳转到登录页
+      name: LOGIN_PAGE_NAME //Jump to the login page
     })
   } else if (!token && to.name === LOGIN_PAGE_NAME) {
-    // 未登陆且要跳转的页面是登录页
-    next() // 跳转
+    // The page that is not logged in and wants to jump is the login page.
+    next() // Jump
   } else if (token && to.name === LOGIN_PAGE_NAME) {
-    // 已登录且要跳转的页面是登录页
+    // The page that has been logged in and wants to jump is the login page
     next({
-      name: homeName // 跳转到homeName页
+      name: homeName // redirect to homeName Page
     })
   } else {
     if (store.state.user.hasGetInfo) {
       turnTo(to, store.state.user.access, next)
     } else {
       store.dispatch('getUserInfo').then(user => {
-        // 拉取用户信息，通过用户权限和跳转的页面的name来判断是否有权限访问;access必须是一个数组，如：['super_admin'] ['super_admin', 'admin']
+        // Pull user information, determine whether there is permission to access by user permission and the name of the page to jump; access must be an array, such as: ['super_admin'] ['super_admin', 'admin']
         turnTo(to, user.access, next)
       }).catch(() => {
         setToken('')

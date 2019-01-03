@@ -2,15 +2,15 @@
   <div>
     <Row :gutter="20">
       <i-col span="12">
-        <Card title="iview-admin交流群(已满)" shadow>
+        <Card title="iview-adminExchange group (full)" shadow>
           <img class="qq-group-img" :src="qqFans" alt="">
-          <p class="qq-group-intro">本群为使用iview-admin或者对iview-admin感兴趣的开发者提供交流平台，在这里，解决你开发中的疑惑，共同进步。</p>
+          <p class="qq-group-intro">This group is using iview-Admin or on iview-Developers interested in admin provide a communication platform, here to solve the doubts in your development and make progress together.</p>
         </Card>
       </i-col>
       <i-col span="12">
-        <Card title="iview-admin交流群2" shadow>
+        <Card title="iview-adminExchange group 2" shadow>
           <img class="qq-group-img" :src="qqFans2" alt="">
-          <p class="qq-group-intro">本群为使用iview-admin或者对iview-admin感兴趣的开发者提供交流平台，在这里，解决你开发中的疑惑，共同进步。</p>
+          <p class="qq-group-intro">This group provides a communication platform for developers who use iview-admin or interested in iview-admin. Here, solve the doubts in your development and make progress together.</p>
         </Card>
       </i-col>
     </Row>

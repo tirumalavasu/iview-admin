@@ -2,27 +2,27 @@ import Main from '@/components/main'
 import parentView from '@/components/parent-view'
 
 /**
- * iview-admin中meta除了原生参数外可配置的参数:
- * meta: {
- *  title: { String|Number|Function }
- *         显示在侧边栏、面包屑和标签栏的文字
- *         使用'{{ 多语言字段 }}'形式结合多语言使用，例子看多语言的路由配置;
- *         可以传入一个回调函数，参数是当前路由对象，例子看动态路由和带参路由
- *  hideInBread: (false) 设为true后此级路由将不会出现在面包屑中，示例看QQ群路由配置
- *  hideInMenu: (false) 设为true后在左侧菜单不会显示该页面选项
- *  notCache: (false) 设为true后页面在切换标签后不会缓存，如果需要缓存，无需设置这个字段，而且需要设置页面组件name属性和路由配置的name一致
- *  access: (null) 可访问该页面的权限数组，当前路由设置的权限会影响子路由
- *  icon: (-) 该页面在左侧菜单、面包屑和标签导航处显示的图标，如果是自定义图标，需要在图标名称前加下划线'_'
- *  beforeCloseName: (-) 设置该字段，则在关闭当前tab页时会去'@/router/before-close.js'里寻找该字段名对应的方法，作为关闭前的钩子函数
- * }
- */
+ * iview-admin meta-configurable parameters in addition to native parameters:
+ * meta: {
+ * title: { String|Number|Function }
+ * Text displayed in the sidebar, breadcrumbs, and tab bar
+ * Use '{{multi-language field }}' form in combination with multi-language use, examples see multi-language routing configuration;
+ * You can pass in a callback function, the parameter is the current routing object, for example, see dynamic routing and parameterized routing
+ * hideInBread: (false) After setting it to true, this level of routing will not appear in the breadcrumbs. See the QQ group routing configuration for an example.
+ * hideInMenu: (false) After setting it to true, the page option will not be displayed in the left menu.
+ * notCache: (false) After the setting is true, the page will not be cached after switching the label. If you need to cache, you do not need to set this field, and you need to set the name attribute of the page component and the name of the routing configuration.
+ * access: (null) access to the page's permission array, the permissions of the current route will affect the sub-route
+ * icon: (-) The icon displayed on the left menu, breadcrumbs, and label navigation. If it is a custom icon, you need to underline the icon name '_'
+ * beforeCloseName: (-) Set this field, when the current tab page is closed, it will go to '@/router/before-close.js' to find the method corresponding to the field name, as the hook function before closing.
+ * }
+ */
 
 export default [
   {
     path: '/login',
     name: 'login',
     meta: {
-      title: 'Login - 登录',
+      title: 'Login - log in',
       hideInMenu: true
     },
     component: () => import('@/view/login/login.vue')
@@ -42,7 +42,7 @@ export default [
         name: 'home',
         meta: {
           hideInMenu: true,
-          title: '首页',
+          title: 'Home',
           notCache: true,
           icon: 'md-home'
         },
@@ -54,7 +54,7 @@ export default [
     path: '',
     name: 'doc',
     meta: {
-      title: '文档',
+      title: 'Document',
       href: 'https://lison16.github.io/iview-admin-doc/#/',
       icon: 'ios-book'
     }
@@ -72,7 +72,7 @@ export default [
         name: 'join_page',
         meta: {
           icon: '_qq',
-          title: 'QQ群'
+          title: 'QQ group'
         },
         component: () => import('@/view/join-page.vue')
       }
@@ -92,7 +92,7 @@ export default [
         name: 'message_page',
         meta: {
           icon: 'md-notifications',
-          title: '消息中心'
+          title: 'Message Center'
         },
         component: () => import('@/view/single-page/message/index.vue')
       }
@@ -103,7 +103,7 @@ export default [
     name: 'components',
     meta: {
       icon: 'logo-buffer',
-      title: '组件'
+      title: 'Component'
     },
     component: Main,
     children: [
@@ -112,7 +112,7 @@ export default [
         name: 'count_to_page',
         meta: {
           icon: 'md-trending-up',
-          title: '数字渐变'
+          title: 'Digital gradient'
         },
         component: () => import('@/view/components/count-to/count-to.vue')
       },
@@ -121,7 +121,7 @@ export default [
         name: 'drag_list_page',
         meta: {
           icon: 'ios-infinite',
-          title: '拖拽列表'
+          title: 'Drag list'
         },
         component: () => import('@/view/components/drag-list/drag-list.vue')
       },
@@ -130,7 +130,7 @@ export default [
         name: 'drag_drawer_page',
         meta: {
           icon: 'md-list',
-          title: '可拖拽抽屉'
+          title: 'Drag and drop drawer'
         },
         component: () => import('@/view/components/drag-drawer')
       },
@@ -139,7 +139,7 @@ export default [
         name: 'org_tree_page',
         meta: {
           icon: 'ios-people',
-          title: '组织结构树'
+          title: 'Organization tree'
         },
         component: () => import('@/view/components/org-tree')
       },
@@ -148,7 +148,7 @@ export default [
         name: 'tree_table_page',
         meta: {
           icon: 'md-git-branch',
-          title: '树状表格'
+          title: 'Tree form'
         },
         component: () => import('@/view/components/tree-table/index.vue')
       },
@@ -157,7 +157,7 @@ export default [
         name: 'cropper_page',
         meta: {
           icon: 'md-crop',
-          title: '图片裁剪'
+          title: 'Image cropping'
         },
         component: () => import('@/view/components/cropper/cropper.vue')
       },
@@ -166,7 +166,7 @@ export default [
         name: 'tables_page',
         meta: {
           icon: 'md-grid',
-          title: '多功能表格'
+          title: 'Multi-function form'
         },
         component: () => import('@/view/components/tables/tables.vue')
       },
@@ -175,7 +175,7 @@ export default [
         name: 'split_pane_page',
         meta: {
           icon: 'md-pause',
-          title: '分割窗口'
+          title: 'Split window'
         },
         component: () => import('@/view/components/split-pane/split-pane.vue')
       },
@@ -184,7 +184,7 @@ export default [
         name: 'markdown_page',
         meta: {
           icon: 'logo-markdown',
-          title: 'Markdown编辑器'
+          title: 'Markdown editor'
         },
         component: () => import('@/view/components/markdown/markdown.vue')
       },
@@ -193,7 +193,7 @@ export default [
         name: 'editor_page',
         meta: {
           icon: 'ios-create',
-          title: '富文本编辑器'
+          title: 'Rich text editor'
         },
         component: () => import('@/view/components/editor/editor.vue')
       },
@@ -202,7 +202,7 @@ export default [
         name: 'icons_page',
         meta: {
           icon: '_bear',
-          title: '自定义图标'
+          title: 'Custom icon'
         },
         component: () => import('@/view/components/icons/icons.vue')
       }
@@ -213,7 +213,7 @@ export default [
     name: 'update',
     meta: {
       icon: 'md-cloud-upload',
-      title: '数据上传'
+      title: 'Data upload'
     },
     component: Main,
     children: [
@@ -222,7 +222,7 @@ export default [
         name: 'update_table_page',
         meta: {
           icon: 'ios-document',
-          title: '上传Csv'
+          title: 'Upload Csv'
         },
         component: () => import('@/view/update/update-table.vue')
       },
@@ -231,7 +231,7 @@ export default [
         name: 'update_paste_page',
         meta: {
           icon: 'md-clipboard',
-          title: '粘贴表格数据'
+          title: 'Paste table data'
         },
         component: () => import('@/view/update/update-paste.vue')
       }
@@ -242,7 +242,7 @@ export default [
     name: 'excel',
     meta: {
       icon: 'ios-stats',
-      title: 'EXCEL导入导出'
+      title: 'EXCEL import and export'
     },
     component: Main,
     children: [
@@ -251,7 +251,7 @@ export default [
         name: 'upload-excel',
         meta: {
           icon: 'md-add',
-          title: '导入EXCEL'
+          title: 'Import EXCEL'
         },
         component: () => import('@/view/excel/upload-excel.vue')
       },
@@ -260,7 +260,7 @@ export default [
         name: 'export-excel',
         meta: {
           icon: 'md-download',
-          title: '导出EXCEL'
+          title: 'Export EXCEL'
         },
         component: () => import('@/view/excel/export-excel.vue')
       }
@@ -279,7 +279,7 @@ export default [
         name: 'tools_methods_page',
         meta: {
           icon: 'ios-hammer',
-          title: '工具方法',
+          title: 'Tool method',
           beforeCloseName: 'before_close_normal'
         },
         component: () => import('@/view/tools-methods/tools-methods.vue')
@@ -318,7 +318,7 @@ export default [
         name: 'error_store_page',
         meta: {
           icon: 'ios-bug',
-          title: '错误收集'
+          title: 'Error collection'
         },
         component: () => import('@/view/error-store/error-store.vue')
       }
@@ -338,7 +338,7 @@ export default [
         name: 'error_logger_page',
         meta: {
           icon: 'ios-bug',
-          title: '错误收集'
+          title: 'Error collection'
         },
         component: () => import('@/view/single-page/error-logger.vue')
       }
@@ -357,7 +357,7 @@ export default [
         name: 'directive_page',
         meta: {
           icon: 'ios-navigate',
-          title: '指令'
+          title: 'instruction'
         },
         component: () => import('@/view/directive/directive.vue')
       }
@@ -368,7 +368,7 @@ export default [
     name: 'multilevel',
     meta: {
       icon: 'md-menu',
-      title: '多级菜单'
+      title: 'Multi-level menu'
     },
     component: Main,
     children: [
@@ -377,7 +377,7 @@ export default [
         name: 'level_2_1',
         meta: {
           icon: 'md-funnel',
-          title: '二级-1'
+          title: 'Level-1'
         },
         component: () => import('@/view/multilevel/level-2-1.vue')
       },
@@ -388,7 +388,7 @@ export default [
           access: ['super_admin'],
           icon: 'md-funnel',
           showAlways: true,
-          title: '二级-2'
+          title: 'Level-2'
         },
         component: parentView,
         children: [
@@ -397,7 +397,7 @@ export default [
             name: 'level_2_2_1',
             meta: {
               icon: 'md-funnel',
-              title: '三级'
+              title: 'Three levels'
             },
             component: () => import('@/view/multilevel/level-2-2/level-2-2-1.vue')
           },
@@ -406,7 +406,7 @@ export default [
             name: 'level_2_2_2',
             meta: {
               icon: 'md-funnel',
-              title: '三级'
+              title: 'Three levels'
             },
             component: () => import('@/view/multilevel/level-2-2/level-2-2-2.vue')
           }
@@ -417,7 +417,7 @@ export default [
         name: 'level_2_3',
         meta: {
           icon: 'md-funnel',
-          title: '二级-3'
+          title: 'Secondary-3'
         },
         component: () => import('@/view/multilevel/level-2-3.vue')
       }

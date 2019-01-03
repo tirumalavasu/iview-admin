@@ -1,5 +1,5 @@
 <template>
-  <error-content code="401" desc="Oh~~您没有浏览这个页面的权限~" :src="src"/>
+  <error-content code="401" desc="Oh~~ You don't have permission to view this page~" :src="src"/>
 </template>
 
 <script>

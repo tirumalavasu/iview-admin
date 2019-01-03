@@ -14,7 +14,7 @@
         <i-col>
           <Card style="margin: 0 5px 5px; text-align: center;">
             <common-icon :size="30" type="ionic"/>
-            <p class="icon-code">iView内置图标</p>
+            <p class="icon-code">iView built-in icon</p>
             <p>&lt;CommonIcon :size="30" type="ionic"&gt;</p>
           </Card>
         </i-col>
@@ -22,8 +22,8 @@
     </i-col>
     <i-col span="8">
       <Card>
-        <p class="intro-p"><Icon style="margin-right: 10px;" :size="10" type="heart"/>Icons组件支持自定义图标的显示，具体自定义图标字体文件的制作请参考文档。</p>
-        <p class="intro-p"><Icon style="margin-right: 10px;" :size="10" type="heart"/>CommonIcon组件同时支持iView内置图标类型和自定义图标类型，为了区别这两种类型，需要在自定义图标名称前加下划线"_"</p>
+        <p class="intro-p"><Icon style="margin-right: 10px;" :size="10" type="heart"/>The Icons component supports the display of custom icons. Please refer to the documentation for the creation of specific custom icon font files.</p>
+        <p class="intro-p"><Icon style="margin-right: 10px;" :size="10" type="heart"/>The CommonIcon component supports both iView built-in icon types and custom icon types. To distinguish between the two types, you need to underline the custom icon name."_"</p>
       </Card>
     </i-col>
   </Row>

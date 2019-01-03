@@ -1,18 +1,18 @@
 <template>
   <div>
     <Card>
-      iview-admin会自动将你程序中的错误收集起来，你可以将错误日志发给后端保存起来。如果你不需要这个功能，将'./src/config/index.js'里的plugin的'error-store'属性删掉即可。
-      另外在开发环境下，你程序中的错误都会被收集起来，这样可能不利于你排查错误，你可以将'./src/config/index.js'的'error-store'的'developmentOff'设为true。
-      如果你只是想收集错误日志，不希望登录用户看到错误日志，你可以不提供查看日志的入口，只需将'./src/config/index.js'的'error-store'的'showInHeader'设为false。
-    </Card>
+       Iview-admin will automatically collect the errors in your program, you can send the error log to the backend to save. If you don't need this feature, delete the 'error-store' attribute of the plugin in './src/config/index.js'.
+       In addition, in the development environment, errors in your program will be collected, which may not help you troubleshoot errors. You can set the 'development-off' of './src/config/index.js' to 'error-store'. True.
+       If you just want to collect the error log and don't want the login user to see the error log, you can not provide the entry to view the log, just put 'showInHeader' of './src/config/index.js' 'error-store' Set to false.
+     </Card>
     <Card style="margin-top: 20px;">
       <Row>
         <i-col span="8">
-          <Button @click="click" style="display: block">点击测试触发程序错误</Button>
-          <Button @click="ajaxClick" style="margin-top:10px;">点击测试触发ajax接口请求错误</Button>
+          <Button @click="click" style="display: block">Click test trigger error</Button>
+          <Button @click="ajaxClick" style="margin-top:10px;">Click test to trigger ajax interface request error</Button>
         </i-col>
         <i-col span="16">
-          ajax接口请求是请求easy-mock的一个不存在接口，所以服务端会报404错误，错误收集机制会收集这个错误，测试的时候有一定网络延迟，所以点击按钮之后稍等一会才会收集到错误。
+          ajaxThe interface request is a non-existing interface requesting easy-mock, so the server will report a 404 error, the error collection mechanism will collect this error, there is a certain network delay when testing, so wait for a while after clicking the button to collect the error.
         </i-col>
       </Row>
     </Card>

@@ -3,30 +3,30 @@
     <Card shadow>
       <Row>
         <i-col span="4">
-          <Button @click="createTagParams">添加一个标签</Button>
+          <Button @click="createTagParams">Add a tag</Button>
         </i-col>
         <i-col span="20">
-          <p>动态路由，添加params</p>
+          <p>Dynamic routing, add params</p>
         </i-col>
       </Row>
     </Card>
     <Card shadow style="margin-top: 10px;">
       <Row>
         <i-col span="4">
-          <Button @click="createTagQuery">添加一个标签</Button>
+          <Button @click="createTagQuery">Add a tag</Button>
         </i-col>
         <i-col span="20">
-          <p>动态路由，添加query</p>
+          <p>Dynamic routing, add query</p>
         </i-col>
       </Row>
     </Card>
     <Card shadow style="margin-top: 10px;">
       <Row>
         <i-col span="4">
-          <Button @click="handleCloseTag">关闭工具方法页</Button>
+          <Button @click="handleCloseTag">Close tool method page</Button>
         </i-col>
         <i-col span="20">
-          <p>手动关闭页面</p>
+          <p>Manually close the page</p>
         </i-col>
       </Row>
     </Card>
@@ -49,7 +49,7 @@ export default {
           id
         },
         meta: {
-          title: `动态路由-${id}`
+          title: `Dynamic routing-${id}`
         }
       }
       this.$router.push(route)
@@ -62,7 +62,7 @@ export default {
           id
         },
         meta: {
-          title: `参数-${id}`
+          title: `parameter-${id}`
         }
       }
       this.$router.push(route)
